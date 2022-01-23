@@ -1,1 +1,1 @@
-# js-count
+# Responsive javascript count
