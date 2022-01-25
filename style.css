@@ -14,11 +14,13 @@
     width: 100vw;
     height: 100vh;
     background: url('images/bg-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .content {
     flex-direction: column;
-    width: 800px;
+    width: 850px;
     height: 300px;
     padding: 40px;
     border-radius: 10px;
@@ -50,7 +52,7 @@
 /* Media query for mobile device */
 @media screen and (max-width: 576px) {
     .content {
-        width: 45%;
+        width: 50%;
     }
 
     .buttons {
@@ -63,6 +65,6 @@
 /* Media query for tablet device */
 @media screen and  (min-width: 577px) and (max-width: 992px) {
     .content {
-        width: 80%;
+        width: 75%;
     }
 }
