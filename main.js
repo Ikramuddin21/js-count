@@ -1,30 +1,37 @@
 const count = document.querySelector('.count');
 
-function increment() {
-    updatedNumber(false);
-}
+const increment = () => updatedNumber(false);
 
-function decrement() {
-    updatedNumber(true);
-}
+const decrement = () => updatedNumber(true);
 
-function reset() {
+const reset = () => {
+    displayColor('gray')
     count.innerText = 0;
 }
-
-function updatedNumber(negative) {
+const updatedNumber = negative => {
     const countTextToNum = parseInt(count.innerText);
     if (negative) {
         const decrement = countTextToNum - 1;
-        if (decrement >= 0) {
-            count.innerText = decrement;
+        if (decrement < 0) {
+            displayColor('red');
+        }
+        else if ( decrement === 0) {
+            displayColor('gray');
         }
         else {
-            alert('Sorry, negative number not count')
-        }
+            displayColor('green');
+            }
+        count.innerText = decrement;
     }
     else {
         const increment = countTextToNum + 1;
+        if (increment > 0) {
+            displayColor('tomato');
+        }
+        else if (increment === 0) {
+            displayColor('gray');
+        }
         count.innerText = increment;
     }
 }
+const displayColor = color => count.style.color = color;
